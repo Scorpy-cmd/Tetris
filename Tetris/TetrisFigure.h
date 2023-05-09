@@ -7,9 +7,12 @@ class TetrisFigure {
 private:
 	int x, y;
 	TetrisShapeSize vid;
+	// Переменная поворота клетки
 	char turn;
+	// Массив координат клеток фигуры на игровом полу
 	COORD coord[max_shape_width * max_shape_height];
-	int coordCnt;
+	// Переменная для хранения куоличества клеток, занимаемых фигурой
+	unsigned char coordCnt;
 	TetrisField* field = 0; // Указатель на игровое поле
 	void CalcCoord();
 

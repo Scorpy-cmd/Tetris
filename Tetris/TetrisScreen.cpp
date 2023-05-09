@@ -16,7 +16,7 @@ void TetrisScreen::setCursorPosition(int x, int y) {
 	COORD coord; // —труктура, котора€ хранит координаты в курсора в консоли.
 	coord.X = x;
 	coord.Y = y;
-	// ”стонавливаем курсор в заданную точку, get- ”казываем стандартный поток вывода 
+	// ”станавливаем курсор в заданную точку, get - ”казываем стандартный поток вывода 
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 

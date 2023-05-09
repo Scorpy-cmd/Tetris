@@ -13,7 +13,7 @@ typedef char TetrisScreenMap[window_height_field][window_width_field];
 // Храним игровое поле с фигурами
 typedef char TetrisSavedFieldMap[window_height_field][window_width_field];
 
-// Макс размеры фигуры
+// Максимальные размеры фигуры
 const int max_shape_width = 4;
 const int max_shape_height = 4;
 
@@ -27,8 +27,8 @@ const char char_figureDown = (char)178;
 // Тип данных для хранения размеров фигуры
 typedef char TetrisShapeSize[max_shape_height][max_shape_width];
 
-// __declspec(selectany) - ЧТОБЫ УБРАТЬ БЛЯДСКУ LNK2005
-__declspec(selectany) char* listOfShape[]{ // Храним список фигур
+// Храним список фигур
+inline char* listOfShape[]{ 
 	(char*)".....**..**.....", // Квадрат
 	(char*)"....****........", // Линия
 	(char*)"....***..*......", // T
