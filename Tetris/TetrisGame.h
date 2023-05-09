@@ -2,7 +2,7 @@
 #include "TetrisScreen.h"
 #include "TetrisField.h"
 #include "TetrisFigure.h"
-#include "EndScreen.h"
+#include "UI.h"
 
 using namespace std;
 class TetrisGame {
@@ -10,7 +10,7 @@ private:
 	TetrisScreen screen;
 	TetrisField field;
 	TetrisFigure figure;
-	EndScreen end_screen;
+	UI ui;
 	
 public:
 	TetrisGame();

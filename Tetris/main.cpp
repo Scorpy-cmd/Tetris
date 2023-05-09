@@ -8,7 +8,7 @@ int main() {
 	sprintf_s(command, "mode con cols=%d lines=%d", window_width_field, window_height_field);
 	system(command);
 
-	srand(time(NULL));
+	srand((int)time(NULL));
 
 	TetrisGame game;
 	while (1) {

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 const int width_field = 20; // Ширина игрового поля
 const int height_field = 30; // Высота игрового поля
@@ -29,15 +30,31 @@ const char char_figureDown = (char)178;
 typedef char TetrisShapeSize[max_shape_height][max_shape_width];
 
 // Храним список фигур
-inline char* listOfShape[]{ 
+inline char* listOfShape[] { 
 	(char*)".....**..**.....", // Квадрат
 	(char*)"....****........", // Линия
 	(char*)"....***..*......", // T
 	(char*)".....***.*......", // L
-	(char*)".....**.**......" // S
+	(char*)".....**.**......", // S
 };
 
 const int listOfShapeCount = sizeof(listOfShape) / sizeof(listOfShape[0]);
 
-
 inline const std::string score_label = "Score:";
+
+inline const std::string end_screen_label = "The game has ended!";
+inline const std::string end_screen_score_label = "Your score is: ";
+
+inline const std::string welcome_label = "Welcome to the game Tetris!";
+
+inline std::vector<std::string> instructions {
+	"W - rotate the figure",
+	"A - move it left ",
+	"S - move it down ",
+	"D - move it right",
+};
+const size_t instructionsCount = instructions.size();
+
+inline const std::string start_game_label = "To start the game";
+inline const std::string start_game_label1 = "press R.";
+inline const std::string exit_game_label = "To exit press ESC.";

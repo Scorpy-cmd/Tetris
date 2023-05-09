@@ -9,7 +9,7 @@ void TetrisScreen::SetEnd() {
 }
 
 void TetrisScreen::Clear() {
-	memset(temp, '.', sizeof(temp));
+	memset(temp, ' ', sizeof(temp));
 }
 
 void TetrisScreen::setCursorPosition(int x, int y) {
@@ -23,6 +23,6 @@ void TetrisScreen::setCursorPosition(int x, int y) {
 void TetrisScreen::Show() {
 	setCursorPosition(0, 0);
 	SetEnd();
-	std::cout << temp[0];
+	std::cout << *temp;
 }
 

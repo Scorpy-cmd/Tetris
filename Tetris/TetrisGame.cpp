@@ -8,9 +8,19 @@ TetrisGame::TetrisGame() {
 
 void TetrisGame::Show() {
 	screen.Clear();
-	field.Put(screen.temp);
-	figure.Put(screen.temp);
-	end_screen.PutScore(screen.temp);
+	switch (ui.state) {
+	case 0:
+		ui.PutStartScreen(screen.temp);
+		break;
+	case 1:
+		ui.PutEndScreen(screen.temp);
+		break;
+	case 2:
+		field.Put(screen.temp);
+		figure.Put(screen.temp);
+		ui.PutScore(screen.temp);
+		break;
+	}
 	screen.Show();
 }
 
@@ -25,10 +35,14 @@ void TetrisGame::PlayerControl() { // Управление
 	if (GetKeyState('S') < 0) figure.Move(0, 1); // Вниз
 	if (GetKeyState('A') < 0) figure.Move(-1, 0); // Влево
 	if (GetKeyState('D') < 0) figure.Move(1, 0); // Вправо
+
+	if (ui.state < 2) {
+		if (GetKeyState('R') < 0) ui.state = 2, ui.reset();
+	}
 }
 
 void TetrisGame::moveAutoShape() {
-	static bool end_of_game = false;
+	if (ui.state < 2) return;
 	static unsigned char tick = 0;
 	tick++;
 
@@ -41,11 +55,11 @@ void TetrisGame::moveAutoShape() {
 			// Если новая фигура с чем то сталкиваеся, значит конец игры
 			if (figure.CheckPosition() > 0) {
 				field.Clear();
-				end_of_game = true;
+				ui.state = 1;
 			}
 		}
 		if (field.Burning()) {
-			end_screen.increaseScore(1);
+			ui.increaseScore(1);
 		}
 		tick = 0;
 	}
