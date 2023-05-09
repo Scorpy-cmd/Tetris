@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EndScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TetrisField.cpp" />
     <ClCompile Include="TetrisFigure.cpp" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
+    <ClInclude Include="EndScreen.h" />
     <ClInclude Include="TetrisField.h" />
     <ClInclude Include="TetrisFigure.h" />
     <ClInclude Include="TetrisGame.h" />

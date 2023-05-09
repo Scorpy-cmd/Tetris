@@ -1,7 +1,6 @@
 #pragma once
 #include "TetrisField.h"
 #include "constants.h"
-#include <fstream>
 
 class TetrisFigure {
 private:

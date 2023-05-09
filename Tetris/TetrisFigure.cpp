@@ -1,6 +1,5 @@
 #include "TetrisFigure.h"
 #include <fstream>
-#include "TetrisScreen.h"
 
 TetrisFigure::TetrisFigure() {
 	memset(this, 0, sizeof(*this)); // Заполняем значение обьекта нулями 
@@ -8,6 +7,7 @@ TetrisFigure::TetrisFigure() {
 
 void TetrisFigure::Shape(const char* _vid) { // Загружаем форму фигуры
 	memcpy(vid, _vid, sizeof(vid)); // Копируем в блок памяти vid из newVid (переданно)
+	turn = 0;
 }
 
 // Устанавливаем координаты фигуры по координатам

@@ -16,7 +16,7 @@ void TetrisField::Put(TetrisScreenMap& scr) { // Рисуем игровое поле
 	}
 }
 
-void TetrisField::Burning() {
+bool TetrisField::Burning() {
 	// Проходим по полю снизу вверх
 	for (int j = height_field - 1; j >= 0; j--) {
 		static bool fillLine;
@@ -31,7 +31,8 @@ void TetrisField::Burning() {
 			for (int y = j; y >= 1; y--) {
 				memcpy(field[y], field[y - 1], sizeof(field[y]));
 			}
-			return;
+			return true;
 		}
 	}
+	return false;
 }

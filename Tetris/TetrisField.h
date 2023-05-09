@@ -8,5 +8,5 @@ public:
 	TetrisField();
 	void Clear();
 	void Put(TetrisScreenMap& scr);
-	void Burning();
+	bool Burning();
 };

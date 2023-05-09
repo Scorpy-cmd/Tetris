@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 const int width_field = 20; // Ширина игрового поля
 const int height_field = 30; // Высота игрового поля
@@ -39,4 +40,4 @@ inline char* listOfShape[]{
 const int listOfShapeCount = sizeof(listOfShape) / sizeof(listOfShape[0]);
 
 
-
+inline const std::string score_label = "Score:";
