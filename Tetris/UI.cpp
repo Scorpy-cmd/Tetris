@@ -42,11 +42,11 @@ void UI::PutEndScreen(TetrisScreenMap& scr) {
 }
 
 void UI::PutBottomPanel(TetrisScreenMap& scr) {
-	for (int i = 0; i < start_game_label.size(); i++) {
-		scr[y * 2 - 4][x - start_game_label.size() / 2 + i] = start_game_label[i];
+	for (int i = 0; i < R_to_start_game_label.size(); i++) {
+		scr[y * 2 - 4][x - R_to_start_game_label.size() / 2 + i] = R_to_start_game_label[i];
 	}
-	for (int i = 0; i < start_game_label1.size(); i++) {
-		scr[y * 2 - 3][x - start_game_label1.size() / 2 + i] = start_game_label1[i];
+	for (int i = 0; i < R_to_start_game_label1.size(); i++) {
+		scr[y * 2 - 3][x - R_to_start_game_label1.size() / 2 + i] = R_to_start_game_label1[i];
 	}
 	for (int i = 0; i < exit_game_label.size(); i++) {
 		scr[y * 2 - 2][x - exit_game_label.size() / 2 + i] = exit_game_label[i];

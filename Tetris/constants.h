@@ -55,6 +55,6 @@ inline std::vector<std::string> instructions {
 };
 const size_t instructionsCount = instructions.size();
 
-inline const std::string start_game_label = "To start the game";
-inline const std::string start_game_label1 = "press R.";
+inline const std::string R_to_start_game_label = "To start the game";
+inline const std::string R_to_start_game_label1 = "press R.";
 inline const std::string exit_game_label = "To exit press ESC.";
